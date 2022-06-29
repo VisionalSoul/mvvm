@@ -1,6 +1,6 @@
 # MetalRoom
 
 #### 介绍
-​	this is my gitee project.
-
-​	welcome!
+​    This is my project.
+    Welcome!
+    And my following work will be here.
