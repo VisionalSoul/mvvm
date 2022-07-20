@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 jest.mock('../observer.js');
 jest.mock('../compile.js');
 const MVVM = require('../MVVM');

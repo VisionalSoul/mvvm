@@ -34,12 +34,7 @@ class MVVM{
     }
 }
 
+window.MVVM = MVVM;
+
 module.exports = MVVM;
 
-vm = new MVVM({
-    el:'#app',
-    data:{
-        message:'hello',
-        test:'world'
-    }
-})

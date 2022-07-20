@@ -25,6 +25,7 @@ class Watcher{
         if (newValue !== oldValue){
             this.cb(newValue); //调用watch的callback
         }
+        this.value = newValue;
     }
 
     getVal(vm, expr){

@@ -10,8 +10,8 @@
     <div id="app">
         <input type="text" v-model="message">
         <div>{{message}} {{test}}</div>
-        <ul><li></li></ul>
-        {{message}}
+        <ul><li>{{message}}</li></ul>
+        {{test}}
     </div>
 <!--    <script src="watcher.js"></script>-->
 <!--    <script src="observer.js"></script>-->
@@ -20,13 +20,13 @@
     <script src="bundle.js"></script>
 <!--    为了便于单元测试的require，此处使用webpack将文件合并为bundle.js-->
     <script>
-        // let vm = new MVVM({
-        //     el:'#app',
-        //     data:{
-        //         message:'hello',
-        //         test:'world'
-        //     }
-        // })
+        let vm = new MVVM({
+            el:'#app',
+            data:{
+                message:'hello',
+                test:'world'
+            }
+        })
     </script>
 </body>
 
