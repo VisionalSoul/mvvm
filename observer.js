@@ -53,3 +53,5 @@ class Dep{
         this.subs.forEach(watcher=>watcher.update());
     }
 }
+
+module.exports = {Observer, Dep};

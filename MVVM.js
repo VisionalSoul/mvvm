@@ -1,3 +1,6 @@
+const Observer = require('./observer').Observer;
+const Compile = require('./compile').Compile;
+
 class MVVM{
     constructor(options) {
         //将数据挂载在实例上
@@ -30,3 +33,13 @@ class MVVM{
         })
     }
 }
+
+module.exports = MVVM;
+
+vm = new MVVM({
+    el:'#app',
+    data:{
+        message:'hello',
+        test:'world'
+    }
+})

@@ -1,3 +1,5 @@
+const Watcher = require("./watcher");
+
 class Compile{
     constructor(el, vm) {
         this.el = this.isElementNode(el)?el:document.querySelector(el);
@@ -111,16 +113,16 @@ CompileUtil = {
 
     //获取文本的值
     getTextValue(vm, expr){
-        return expr.replace(/\{\{([^}]+)}}/g, (...arguments)=>{
-            return this.getVal(vm, arguments[1]);
+        return expr.replace(/\{\{([^}]+)}}/g, (...args)=>{
+            return this.getVal(vm, args[1]);
         });
     },
 
     text(node, vm, expr){//文本处理
         let updateFn = this.updater['textUpdater'];
         let value = this.getTextValue(vm, expr);
-        expr.replace(/\{\{([^}]+)}}/g, (...arguments)=>{
-            new Watcher(vm, arguments[1], (newValue)=>{
+        expr.replace(/\{\{([^}]+)}}/g, (...args)=>{
+            new Watcher(vm, args[1], (newValue)=>{
                 updateFn && updateFn(node, this.getTextValue(vm, expr));
             })
         });
@@ -148,3 +150,5 @@ CompileUtil = {
         }
     }
 }
+
+module.exports = {Compile, CompileUtil};

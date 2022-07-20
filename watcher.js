@@ -1,3 +1,5 @@
+const Dep = require('./observer').Dep;
+
 class Watcher{
     constructor(vm, expr, cb) {
         this.vm = vm;
@@ -10,17 +12,27 @@ class Watcher{
     //获取值
     get(){
         Dep.target = this;
-        let value = CompileUtil.getVal(this.vm, this.expr);
+        let expr = this.expr.toString();
+        let value = this.getVal(this.vm, expr);
         Dep.target = null;
         return value;
     }
 
     //更新（对外暴露的方法）
     update(){
-        let newValue = CompileUtil.getVal(this.vm, this.expr);
+        let newValue = this.getVal(this.vm, this.expr);
         let oldValue = this.value;
         if (newValue !== oldValue){
             this.cb(newValue); //调用watch的callback
         }
     }
+
+    getVal(vm, expr){
+        expr = expr.split('.'); //a.b.c
+        return expr.reduce((prev, next)=>{
+            return prev[next];
+        }, vm.$data);
+    }
 }
+
+module.exports = Watcher;
