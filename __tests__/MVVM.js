@@ -13,7 +13,7 @@ test('测试构造函数', ()=>{
             message: 1
         }
     })
-    expect(true).toBe(true);
+    expect(mvvm.$data.message).toBe(1);
 })
 
 test('测试构造函数', ()=>{
@@ -24,7 +24,7 @@ test('测试构造函数', ()=>{
             message: 1
         }
     })
-    expect(true).toBe(true);
+    expect(mvvm.$el).toBe(null);
 })
 
 test('测试数据代理', ()=>{

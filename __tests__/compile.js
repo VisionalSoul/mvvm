@@ -23,7 +23,7 @@ test('构造函数测试', ()=>{
         }
     };
     new Compile(el, vm);
-    expect(document.getElementById('test').innerHTML).toBe('1');
+    expect(document.getElementById('test').innerHTML).toBe('1');//html中的{{message}}被替换为1
 })
 
 test('构造函数测试', ()=>{
@@ -35,5 +35,5 @@ test('构造函数测试', ()=>{
         }
     };
     new Compile('#notExist', vm);
-    expect(true).toBe(true);
+    expect(true).toBe(true);//无法找到el，方法未执行
 })

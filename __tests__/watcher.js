@@ -15,6 +15,7 @@ test('构造函数测试', ()=>{
 })
 
 test('update测试（数据更新）', ()=>{
+    expect.assertions(1)
     let vm = {
         $el: '#test',
         $data: {
@@ -26,9 +27,11 @@ test('update测试（数据更新）', ()=>{
     let obj = new Watcher(vm, expr, cb);
     obj.vm.$data.message = 2;
     obj.update();
+    expect(vm.$data.message).toBe(2);
 })
 
 test('update测试（数据未更新）', ()=>{
+    expect.assertions(1);
     let vm = {
         $el: '#test',
         $data: {
@@ -40,4 +43,5 @@ test('update测试（数据未更新）', ()=>{
     let obj = new Watcher(vm, expr, cb);
     obj.vm.$data.message = 1;
     obj.update();
+    expect(vm.$data.message).toBe(1);
 })
