@@ -45,11 +45,11 @@
 
 双向绑定：
 
-![](.\pics\tutieshi_640x329_3s.gif)
+![](https://raw.githubusercontent.com/VisionalSoul/mvvm/master/pics/tutieshi_640x329_3s.gif)
 
 单向绑定：
 
-![](.\pics\ezgif-2-a6fdbab845.gif)
+![](https://raw.githubusercontent.com/VisionalSoul/mvvm/master/pics/ezgif-2-a6fdbab845.gif)
 
 
 
@@ -294,9 +294,9 @@ Observer中的defineReactive方法依赖于Dep类，实现发布订阅。
 
 我们分别对MVVM.js、observer.js、compile.js、watcher.js进行了单元测试。测试的结果如下：
 
-<img src=".\pics\image-20220721001011852.png" alt="image-20220721001011852" style="zoom: 67%;" />
+<img src="https://raw.githubusercontent.com/VisionalSoul/mvvm/master/pics/image-20220721001011852.png" alt="image-20220721001011852" style="zoom: 67%;" />
 
-![image-20220721001130508](.\pics\image-20220721001130508.png)
+![image-20220721001130508](https://raw.githubusercontent.com/VisionalSoul/mvvm/master/pics/image-20220721001130508.png)
 
 如图，语句覆盖达到91.74%，分支覆盖达到81.25%，方法覆盖达到88.37%，行覆盖达到91.66%。
 
